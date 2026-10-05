@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Đăng nhập — CreatorStudio</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/login.css" />
+    <script src="js/shared.js" defer></script>
+    <script src="js/login.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Đến nội dung chính</a>
+    <main class="login-layout" id="main">
+      <section class="login-story">
+        <a class="brand" href="index.html"
+          ><span class="brand-mark">✳</span>CreatorStudio.</a
+        >
+        <div class="story-copy">
+          <span class="eyebrow">Ý tưởng của bạn, hành trình của chúng ta</span>
+          <h1>
+            Mọi sáng tạo hay<br />đều bắt đầu bằng<br /><em>một kết nối.</em>
+          </h1>
+          <p>
+            Một nơi để trao đổi ý tưởng, cùng hoàn thiện<br />và tạo nên những
+            điều bạn tự hào.
+          </p>
+          <div class="story-art">
+            <img
+              src="assets/images/moc-v2.svg"
+              alt="Bản sắc thương hiệu Mộc với bảng màu xanh và kem"
+            /><span class="art-label">MỘC — BRAND IDENTITY <span>→</span></span>
+          </div>
+        </div>
+        <small>CREATORSTUDIO / CREATIVE WORKSPACE</small>
+      </section>
+      <section class="login-form-side">
+        <a class="back-link" href="index.html">← Về trang chủ</a>
+        <div class="login-card">
+          <span class="eyebrow">Chào mừng trở lại</span>
+          <h2>Tiếp nối cảm hứng.</h2>
+          <p>Đăng nhập để trở về không gian sáng tạo của bạn.</p>
+          <div class="demo-notice">
+            Đây là phiên đăng nhập mô phỏng. Dùng email và mật khẩu bất kỳ hợp
+            lệ; không nhập mật khẩu thật.
+          </div>
+          <form id="login-form" novalidate>
+            <div class="field">
+              <label for="email">Địa chỉ email</label
+              ><input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="off"
+                placeholder="ban@example.com"
+                required
+              /><small class="error" id="email-error"></small>
+            </div>
+            <div class="field">
+              <label for="password">Mật khẩu demo</label>
+              <div class="password-wrap">
+                <input
+                  id="password"
+                  name="password"
+                  type="password"
+                  autocomplete="off"
+                  minlength="6"
+                  placeholder="Tối thiểu 6 ký tự"
+                  required
+                /><button
+                  type="button"
+                  id="toggle-password"
+                  aria-label="Hiện mật khẩu"
+                  aria-pressed="false"
+                >
+                  Hiện
+                </button>
+              </div>
+              <small class="error" id="password-error"></small>
+            </div>
+            <button class="btn primary" type="submit" id="login-submit">
+              Đăng nhập <span>→</span>
+            </button>
+            <p
+              id="login-status"
+              class="error"
+              role="status"
+              aria-live="polite"
+            ></p>
+          </form>
+          <div class="or-divider">
+            <span>hoặc khám phá nhanh bằng vai trò</span>
+          </div>
+          <div class="demo-roles">
+            <button data-role="Client">
+              <span>◎</span><strong>Khách hàng</strong
+              ><small>Tạo brief & duyệt thiết kế</small></button
+            ><button data-role="Designer">
+              <span>◈</span><strong>Nhà thiết kế</strong
+              ><small>Moodboard & phiên bản</small></button
+            ><button data-role="Creative Lead">
+              <span>▦</span><strong>Creative Lead</strong
+              ><small>Điều phối & phản hồi</small></button
+            ><button data-role="Admin">
+              <span>⚙</span><strong>Quản trị viên</strong
+              ><small>Quản lý hệ thống</small>
+            </button>
+          </div>
+          <p class="login-footnote">
+            Bộ giao diện SV1 triển khai vai trò Client.<br />Các vai trò còn lại
+            hiển thị thông báo phạm vi demo.
+          </p>
+        </div>
+        <small class="bottom-note"
+          >Dữ liệu mẫu lưu tại trình duyệt · Không cần tài khoản thật</small
+        >
+      </section>
+    </main>
+  </body>
+</html>

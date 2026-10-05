@@ -1,0 +1,51 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="720"
+  height="720"
+  viewBox="0 0 720 720"
+>
+  <rect width="720" height="720" fill="#e0ded4" />
+  <path d="M100 560 V285 A155 155 0 0 1 410 285 V560" fill="#c4b6a1" />
+  <path d="M123 560 V293 A131 131 0 0 1 387 293 V560" fill="#ddd3bf" />
+  <rect y="550" width="720" height="170" fill="#c6bba8" />
+  <path d="M430 340 H620 L644 430 H408Z" fill="#978c74" />
+  <rect x="516" y="430" width="16" height="140" fill="#5d614e" />
+  <ellipse cx="524" cy="580" rx="60" ry="8" fill="#5d614e" />
+  <g fill="#87755a">
+    <rect x="188" y="475" width="173" height="65" rx="24" />
+    <rect x="204" y="529" width="14" height="63" />
+    <rect x="332" y="529" width="14" height="63" />
+  </g>
+  <text x="42" y="70" font-family="Georgia,serif" font-size="57" fill="#414c39">
+    forma.
+  </text>
+  <text
+    x="46"
+    y="98"
+    font-family="Arial"
+    font-size="9"
+    letter-spacing="3"
+    fill="#635f52"
+  >
+    SPACE TO BE YOURSELF
+  </text>
+  <text
+    x="46"
+    y="666"
+    font-family="Georgia,serif"
+    font-size="29"
+    fill="#414c39"
+  >
+    Sống theo cách của bạn.
+  </text>
+  <text
+    x="46"
+    y="690"
+    font-family="Arial"
+    font-size="8"
+    letter-spacing="2"
+    fill="#635f52"
+  >
+    CREATORSTUDIO / UI CONCEPT 01
+  </text>
+</svg>

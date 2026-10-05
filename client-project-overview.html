@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dự án của tôi — CreatorStudio</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/client-project-overview.css" />
+    <script src="js/shared.js" defer></script>
+    <script src="js/client-project-overview.js" defer></script>
+  </head>
+  <body>
+    <main id="main" class="main-content">
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">Ý tưởng hôm nay, thành quả ngày mai</span>
+          <h1 class="page-title">
+            Dự án của tôi<span class="heading-dot">.</span>
+          </h1>
+          <p>Mọi hành trình sáng tạo của bạn, trong một không gian.</p>
+        </div>
+        <button class="btn primary" id="new-project">＋ Tạo dự án mới</button>
+      </div>
+      <section class="stats" aria-label="Thống kê dự án">
+        <div>
+          <span>Tổng dự án</span><strong id="stat-total">0</strong
+          ><small>Những ý tưởng đang thành hình</small>
+        </div>
+        <div>
+          <span>Đang thực hiện <i class="stat-dot green"></i></span
+          ><strong id="stat-active">0</strong
+          ><small>Đang được đội ngũ chăm chút</small>
+        </div>
+        <div>
+          <span>Chờ phản hồi <i class="stat-dot amber"></i></span
+          ><strong id="stat-review">0</strong
+          ><small>Cần góc nhìn của bạn</small>
+        </div>
+        <div>
+          <span>Đã hoàn thành <i class="stat-dot"></i></span
+          ><strong id="stat-done">0</strong
+          ><small>Sẵn sàng cho hành trình mới</small>
+        </div>
+      </section>
+      <section aria-label="Danh sách dự án">
+        <div class="project-toolbar">
+          <div class="tabs" role="group" aria-label="Lọc trạng thái">
+            <button data-filter="all" class="active" aria-pressed="true">
+              Tất cả</button
+            ><button data-filter="Active" aria-pressed="false">
+              Đang thực hiện</button
+            ><button data-filter="In Review" aria-pressed="false">
+              Chờ phản hồi</button
+            ><button data-filter="Completed" aria-pressed="false">
+              Hoàn thành</button
+            ><button data-filter="Archived" aria-pressed="false">
+              Lưu trữ
+            </button>
+          </div>
+          <div class="search-box">
+            <span aria-hidden="true">⌕</span
+            ><input
+              id="search"
+              aria-label="Tìm dự án"
+              placeholder="Tìm dự án…"
+              type="search"
+            />
+          </div>
+        </div>
+        <div class="list-caption">
+          <span id="result-count" role="status"></span
+          ><span>Sắp xếp: Mới nhất trước</span>
+        </div>
+        <div class="project-grid" id="project-list"></div>
+      </section>
+      <div class="footer-note">
+        <span>✳ Mỗi dự án đều là một câu chuyện đáng kể.</span
+        ><span>CreatorStudio · Không gian khách hàng</span>
+      </div>
+      <dialog id="project-dialog">
+        <div class="dialog-head">
+          <div>
+            <span class="eyebrow">Bắt đầu một hành trình</span>
+            <h2 id="dialog-title">Tạo dự án mới</h2>
+            <p>Hãy cho ý tưởng của bạn một cái tên.</p>
+          </div>
+          <button
+            class="text-button"
+            type="button"
+            id="close-dialog"
+            aria-label="Đóng"
+          >
+            ✕
+          </button>
+        </div>
+        <form id="project-form">
+          <div class="field">
+            <label for="project-name">Tên dự án *</label
+            ><input
+              id="project-name"
+              required
+              maxlength="100"
+              placeholder="Ví dụ: Mộc — Bộ nhận diện thương hiệu"
+            />
+          </div>
+          <div class="form-grid">
+            <div class="field">
+              <label for="project-category">Loại dự án</label
+              ><select id="project-category">
+                <option>Branding</option>
+                <option>UI/UX</option>
+                <option>Campaign</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="project-deadline">Ngày dự kiến hoàn thành *</label
+              ><input id="project-deadline" type="date" required />
+            </div>
+            <div class="field full">
+              <label for="project-description">Ý tưởng ban đầu *</label
+              ><textarea
+                id="project-description"
+                required
+                maxlength="2000"
+                placeholder="Bạn muốn tạo ra điều gì?"
+              ></textarea>
+            </div>
+          </div>
+          <p class="error" role="status" id="project-error"></p>
+          <div class="actions">
+            <button type="button" class="btn" id="cancel-project">Hủy</button
+            ><button type="submit" class="btn primary" id="save-project">
+              Tạo dự án & viết brief →
+            </button>
+          </div>
+        </form>
+      </dialog>
+    </main>
+  </body>
+</html>

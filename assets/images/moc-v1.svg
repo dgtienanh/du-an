@@ -1,0 +1,141 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="720"
+  height="720"
+  viewBox="0 0 720 720"
+>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#e7e2d3" />
+      <stop offset="1" stop-color="#c6d2bd" />
+    </linearGradient>
+    <linearGradient id="glass" x2="1">
+      <stop stop-color="#687761" />
+      <stop offset=".48" stop-color="#537755" />
+      <stop offset="1" stop-color="#687761" />
+    </linearGradient>
+    <filter id="shadow"><feGaussianBlur stdDeviation="13" /></filter>
+  </defs>
+  <rect width="720" height="720" fill="url(#bg)" />
+  <circle cx="650" cy="95" r="230" fill="#ffffff" opacity=".2" />
+  <path d="M0 500 Q380 445 720 515 V720 H0" fill="#b3c0a7" opacity=".5" />
+  <ellipse
+    cx="370"
+    cy="614"
+    rx="220"
+    ry="30"
+    fill="#536144"
+    opacity=".22"
+    filter="url(#shadow)"
+  />
+  <g stroke="#6d8c55" stroke-width="5" fill="none" opacity=".6">
+    <path d="M75 490 Q85 250 230 95" />
+    <path d="M95 385 Q28 265 53 204 Q150 244 95 385" fill="#8aa276" />
+    <path d="M132 280 Q140 176 230 170 Q224 260 132 280" fill="#8aa276" />
+    <path d="M153 210 Q126 104 179 81 Q215 150 153 210" fill="#8aa276" />
+  </g>
+  <g transform="translate(275 218) rotate(-5 90 170)">
+    <rect x="-6" y="116" width="182" height="291" rx="24" fill="url(#glass)" />
+    <rect x="32" y="80" width="107" height="54" rx="10" fill="#263d2d" />
+    <rect x="58" y="43" width="53" height="49" rx="6" fill="#263d2d" />
+    <path d="M68 47 V28 H158 V47 Z" fill="#263d2d" />
+    <rect x="6" y="188" width="158" height="166" rx="3" fill="#e4dcc9" />
+    <text
+      x="85"
+      y="253"
+      text-anchor="middle"
+      font-family="Georgia,serif"
+      font-size="53"
+      fill="#687761"
+    >
+      mộc.
+    </text>
+    <text
+      x="85"
+      y="282"
+      text-anchor="middle"
+      font-family="Arial"
+      font-size="9"
+      letter-spacing="3"
+      fill="#687761"
+    >
+      NATURALLY YOU
+    </text>
+    <path d="M55 308 H115" stroke="#687761" stroke-width="1" />
+    <text
+      x="85"
+      y="330"
+      text-anchor="middle"
+      font-family="Arial"
+      font-size="9"
+      fill="#687761"
+    >
+      GENTLE DAILY CARE / 250 ML
+    </text>
+  </g>
+  <g transform="translate(475 340) rotate(8)">
+    <rect width="112" height="272" rx="5" fill="#e4dcc9" />
+    <text
+      x="56"
+      y="88"
+      text-anchor="middle"
+      font-family="Georgia,serif"
+      font-size="37"
+      fill="#687761"
+    >
+      mộc.
+    </text>
+    <text
+      x="56"
+      y="118"
+      text-anchor="middle"
+      font-family="Arial"
+      font-size="7"
+      letter-spacing="2"
+      fill="#687761"
+    >
+      FROM THE EARTH
+    </text>
+    <path d="M30 242 Q38 178 83 160 Q77 224 30 242" fill="#96ae80" />
+    <path d="M34 234 L78 170" stroke="#687761" fill="none" />
+    <text
+      x="56"
+      y="261"
+      text-anchor="middle"
+      font-family="Arial"
+      font-size="7"
+      fill="#687761"
+    >
+      BOTANICAL SKINCARE
+    </text>
+  </g>
+  <text
+    x="43"
+    y="52"
+    font-family="Arial"
+    font-size="10"
+    letter-spacing="3"
+    fill="#687761"
+  >
+    MỘC / BRAND EXPLORATION 01
+  </text>
+  <text
+    x="43"
+    y="660"
+    font-family="Georgia,serif"
+    font-size="31"
+    fill="#687761"
+  >
+    Chạm vào điều tự nhiên.
+  </text>
+  <text
+    x="45"
+    y="688"
+    font-family="Arial"
+    font-size="8"
+    letter-spacing="3"
+    fill="#687761"
+  >
+    CREATORSTUDIO — CONCEPT ART
+  </text>
+</svg>

@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Duyệt phiên bản — CreatorStudio</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/client-review-versions.css" />
+    <script src="js/shared.js" defer></script>
+    <script src="js/client-review-versions.js" defer></script>
+  </head>
+  <body>
+    <main id="main" class="main-content">
+      <a class="back-link" href="client-project-overview.html"
+        >← Tất cả dự án</a
+      >
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">02 / Cùng nhau hoàn thiện</span>
+          <h1 class="page-title">Góc nhìn của bạn tạo khác biệt.</h1>
+          <p>So sánh, chia sẻ phản hồi và cùng chọn phiên bản tốt nhất.</p>
+        </div>
+        <span id="version-status"></span>
+      </div>
+      <div class="review-project panel">
+        <div class="field">
+          <label for="project-select">DỰ ÁN</label
+          ><select id="project-select"></select>
+        </div>
+        <div class="actions">
+          <button class="btn small" id="moodboard">
+            ◈ Định hướng moodboard</button
+          ><a
+            class="text-button"
+            id="brief-link"
+            href="client-creative-brief.html"
+            >Xem brief →</a
+          >
+        </div>
+      </div>
+      <div id="review-empty" class="empty" hidden>
+        <h3 id="empty-title">Chọn dự án để xem phiên bản</h3>
+        <p id="empty-description">
+          Chọn một dự án có phiên bản thiết kế để bắt đầu phản hồi.
+        </p>
+        <a class="btn primary" href="client-project-overview.html"
+          >Đến danh sách dự án →</a
+        >
+      </div>
+      <div id="review-workspace">
+        <div class="review-layout">
+          <section class="design-panel panel">
+            <div class="compare-toolbar">
+              <div
+                class="compare-modes"
+                role="group"
+                aria-label="Chế độ so sánh"
+              >
+                <button class="active" aria-pressed="true" data-mode="side">
+                  ◫ Song song</button
+                ><button aria-pressed="false" data-mode="slider">
+                  ↔ Thanh trượt
+                </button>
+              </div>
+              <span class="pill">2 phiên bản mẫu</span>
+            </div>
+            <div class="version-caption">
+              <span>v1.0 <small>Bản đầu tiên</small></span
+              ><span>v2.0 <small>Phiên bản mới nhất</small></span>
+            </div>
+            <div class="comparison" id="comparison">
+              <div class="old-design">
+                <img id="old-image" alt="Thiết kế mẫu phiên bản v1.0" />
+              </div>
+              <div id="pin-stage" class="pin-stage">
+                <img id="new-image" alt="Thiết kế mẫu phiên bản v2.0" />
+                <div id="pins"></div>
+              </div>
+              <span class="slider-line" id="slider-line" aria-hidden="true"
+                >↔</span
+              >
+            </div>
+            <div class="slider-control" id="slider-control" hidden>
+              <label for="compare-range">Tỷ lệ hiển thị v1.0 / v2.0</label
+              ><input
+                type="range"
+                id="compare-range"
+                min="0"
+                max="100"
+                value="50"
+              /><output id="range-value" for="compare-range">50%</output>
+            </div>
+            <div class="pin-tip">
+              <span>⊕</span>
+              <p id="pin-instruction">
+                Nhấn vào ảnh v2.0 để ghim phản hồi tại đúng vị trí.
+              </p>
+              <button class="btn small" id="add-comment">＋ Phản hồi</button>
+            </div>
+            <div class="changelog">
+              <span class="eyebrow">Có gì mới trong v2.0?</span>
+              <h3>Rõ ràng hơn. Gần gũi hơn.</h3>
+              <p>
+                Điều chỉnh bố cục, bổ sung màu nhấn và làm nổi bật thông điệp.
+                Hai phiên bản là dữ liệu mẫu để trải nghiệm luồng review.
+              </p>
+              <div class="change-tags">
+                <span>✓ Bố cục</span><span>✓ Màu sắc</span
+                ><span>✓ Typography</span>
+              </div>
+            </div>
+          </section>
+          <aside class="feedback-panel panel">
+            <div class="feedback-heading">
+              <h3>Phản hồi <span id="comment-count">0</span></h3>
+              <span>→</span>
+            </div>
+            <div class="feedback-tabs" role="group" aria-label="Lọc phản hồi">
+              <button class="active" data-comments="all" aria-pressed="true">
+                Tất cả</button
+              ><button data-comments="open" aria-pressed="false">
+                Chưa xử lý</button
+              ><button data-comments="resolved" aria-pressed="false">
+                Đã xử lý
+              </button>
+            </div>
+            <div id="comment-list"></div>
+            <div class="feedback-footer">
+              <strong>Mỗi phản hồi đều có giá trị.</strong>
+              <p>
+                Hãy nói rõ điều cần thay đổi và lý do.<br />Đội ngũ sẽ dễ hiểu
+                mong muốn của bạn hơn.
+              </p>
+            </div>
+          </aside>
+        </div>
+        <section class="decision-panel panel">
+          <div>
+            <span class="eyebrow">Bước tiếp theo</span>
+            <h3 id="decision-title">Bạn cảm thấy phiên bản này thế nào?</h3>
+            <p id="decision-description">
+              Phê duyệt để hoàn tất, hoặc gửi phản hồi để đội ngũ chỉnh sửa.
+            </p>
+          </div>
+          <div class="actions">
+            <button class="btn" id="request-changes">↶ Yêu cầu chỉnh sửa</button
+            ><button class="btn primary" id="approve">✓ Phê duyệt v2.0</button>
+          </div>
+        </section>
+      </div>
+      <div class="footer-note">
+        <span>✳ Phản hồi rõ ràng, thành quả tốt hơn.</span
+        ><span>Phản hồi & trạng thái lưu tại trình duyệt</span>
+      </div>
+      <dialog id="comment-dialog">
+        <div class="dialog-head">
+          <h2 id="comment-title">Ghim phản hồi</h2>
+          <button
+            class="text-button"
+            id="close-comment"
+            type="button"
+            aria-label="Đóng"
+          >
+            ✕
+          </button>
+        </div>
+        <p id="pin-location">Phản hồi sẽ được gắn với vị trí bạn chọn.</p>
+        <form id="comment-form">
+          <div class="field">
+            <label for="comment-text">Bạn muốn điều chỉnh gì? *</label
+            ><textarea
+              id="comment-text"
+              required
+              maxlength="1000"
+              placeholder="Ví dụ: Mình muốn tên thương hiệu nổi bật hơn ở vị trí này."
+            ></textarea>
+          </div>
+          <p class="error" id="comment-error" role="status"></p>
+          <div class="actions">
+            <button type="button" class="btn" id="cancel-comment">Hủy</button
+            ><button type="submit" class="btn primary">Lưu phản hồi →</button>
+          </div>
+        </form>
+      </dialog>
+      <dialog id="mood-dialog">
+        <div class="dialog-head">
+          <h2>Định hướng tham khảo</h2>
+          <button class="text-button" id="close-mood" aria-label="Đóng">
+            ✕
+          </button>
+        </div>
+        <p>
+          Moodboard mẫu được chia sẻ để đối chiếu khi review. Module tạo
+          moodboard thuộc phần SV2.
+        </p>
+        <div class="mood-palette">
+          <span class="swatch-1">#183C32</span
+          ><span class="swatch-2">#7E9B70</span
+          ><span class="swatch-3">#C5E78B</span
+          ><span class="swatch-4">#F3ECD9</span
+          ><span class="swatch-5">#B9C2AF</span>
+        </div>
+        <div class="mood-words">
+          <span>Tự nhiên</span><span>Tối giản</span><span>Gần gũi</span
+          ><span>Bền vững</span>
+        </div>
+        <small class="muted">Dữ liệu minh họa; không gọi AI bên ngoài.</small>
+      </dialog>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Creative Brief — CreatorStudio</title>
+    <link rel="stylesheet" href="css/shared.css" />
+    <link rel="stylesheet" href="css/client-creative-brief.css" />
+    <script src="js/shared.js" defer></script>
+    <script src="js/client-creative-brief.js" defer></script>
+  </head>
+  <body>
+    <main id="main" class="main-content">
+      <a class="back-link" href="client-project-overview.html"
+        >← Tất cả dự án</a
+      >
+      <div class="page-heading">
+        <div>
+          <span class="eyebrow">01 / Đặt nền móng sáng tạo</span>
+          <h1 class="page-title">Một brief tốt. Một khởi đầu hay.</h1>
+          <p>Chia sẻ ý tưởng của bạn, chúng ta cùng làm rõ điều cần tạo ra.</p>
+        </div>
+        <span class="pill" id="brief-state">Bản nháp</span>
+      </div>
+      <div class="brief-project panel">
+        <span>▤</span>
+        <div class="field">
+          <label for="project-select">DỰ ÁN ĐANG LÀM VIỆC</label
+          ><select id="project-select"></select>
+        </div>
+        <a class="text-button" href="client-project-overview.html"
+          >Quản lý dự án →</a
+        >
+      </div>
+      <div id="brief-empty" class="empty" hidden>
+        <h3>Chọn một ý tưởng để bắt đầu</h3>
+        <p>Chọn dự án phía trên hoặc tạo một dự án mới để viết brief.</p>
+        <a class="btn primary" href="client-project-overview.html"
+          >Đến danh sách dự án →</a
+        >
+      </div>
+      <div id="brief-workspace" class="brief-layout">
+        <section class="panel brief-input">
+          <div class="panel-title">
+            <span class="number-tag">01</span>
+            <div>
+              <h3>Ý tưởng của bạn</h3>
+              <p>Bắt đầu bằng những điều bạn đang nghĩ.</p>
+            </div>
+          </div>
+          <div class="field">
+            <label for="raw-idea">Mô tả yêu cầu *</label
+            ><textarea
+              id="raw-idea"
+              maxlength="5000"
+              placeholder="Tôi muốn xây dựng bộ nhận diện cho một thương hiệu mỹ phẩm thiên nhiên. Khách hàng là người trẻ quan tâm đến môi trường. Phong cách tối giản, màu xanh lá và kem…"
+            ></textarea>
+            <div class="input-caption">
+              <small>Tối thiểu 21 ký tự để tạo gợi ý</small
+              ><small id="char-count">0 / 5.000</small>
+            </div>
+          </div>
+          <div class="tip-card">
+            <strong>✧ Một vài gợi ý để bắt đầu</strong>
+            <ul>
+              <li>Bạn muốn đạt được điều gì?</li>
+              <li>Sản phẩm hướng đến ai?</li>
+              <li>Phong cách và cảm xúc mong muốn?</li>
+              <li>Bạn cần những sản phẩm bàn giao nào?</li>
+            </ul>
+          </div>
+          <button class="btn primary generate-button" id="generate">
+            ✧ Tạo brief có cấu trúc <span>→</span>
+          </button>
+          <div class="actions manual-actions">
+            <button class="text-button" id="manual">Tự viết brief</button
+            ><button class="text-button" id="save-draft">Lưu bản nháp</button>
+          </div>
+          <p class="error" id="brief-error" role="alert"></p>
+          <small class="ai-disclaimer"
+            >AI mô phỏng · Gợi ý dựa trên quy tắc và nội dung nhập.<br />Không
+            gửi dữ liệu đến dịch vụ bên ngoài.</small
+          >
+        </section>
+        <section class="panel brief-result">
+          <div class="panel-title">
+            <span class="number-tag">02</span>
+            <div>
+              <h3>Định hướng sáng tạo</h3>
+              <p>Rà soát và chỉnh sửa trước khi gửi.</p>
+            </div>
+            <span class="pill" id="result-source">Chưa có kết quả</span>
+          </div>
+          <div id="result-placeholder" class="result-placeholder">
+            <span>✧</span>
+            <h3>Từ ý tưởng đến định hướng.</h3>
+            <p>
+              Nhập mô tả và tạo brief, hoặc chọn tự viết.<br />5 phần rõ ràng để
+              đội ngũ hiểu đúng mong muốn của bạn.
+            </p>
+            <div>
+              <span>Mục tiêu</span><span>Đối tượng</span><span>Thông điệp</span
+              ><span>Phong cách</span><span>Bàn giao</span>
+            </div>
+          </div>
+          <div id="generating" class="result-placeholder" role="status" hidden>
+            <span class="spin">✳</span>
+            <h3>Đang sắp xếp ý tưởng của bạn…</h3>
+            <p>Phân tích mô tả và dựng brief 5 phần.</p>
+          </div>
+          <form id="structured-form" hidden>
+            <div class="structured-fields">
+              <div class="field">
+                <label for="goal"><span>01</span> Mục tiêu dự án *</label
+                ><textarea id="goal" required maxlength="2000"></textarea>
+              </div>
+              <div class="field">
+                <label for="audience"
+                  ><span>02</span> Đối tượng mục tiêu *</label
+                ><textarea id="audience" required maxlength="2000"></textarea>
+              </div>
+              <div class="field">
+                <label for="message"><span>03</span> Thông điệp chính *</label
+                ><textarea id="message" required maxlength="2000"></textarea>
+              </div>
+              <div class="field">
+                <label for="style"><span>04</span> Phong cách & cảm xúc *</label
+                ><textarea id="style" required maxlength="2000"></textarea>
+              </div>
+              <div class="field">
+                <label for="deliverables"
+                  ><span>05</span> Sản phẩm bàn giao *</label
+                ><textarea
+                  id="deliverables"
+                  required
+                  maxlength="2000"
+                ></textarea>
+              </div>
+            </div>
+            <div class="explanation">
+              <strong>Vì sao có định hướng này?</strong>
+              <p id="explanation-text"></p>
+            </div>
+            <div class="actions result-controls">
+              <button class="btn small" type="button" id="accept">
+                ✓ Chấp nhận kết quả</button
+              ><button class="text-button" type="button" id="regenerate">
+                Tạo lại ↻</button
+              ><button class="text-button" type="button" id="reject">
+                Từ chối
+              </button>
+            </div>
+            <p class="accepted-note" id="accepted-note" role="status"></p>
+            <div class="submit-row">
+              <small
+                >Brief sẽ được lưu với trạng thái Submitted<br />để Creative
+                Lead tiếp nhận ở bước tiếp theo.</small
+              ><button
+                class="btn primary"
+                type="submit"
+                id="submit-brief"
+                disabled
+              >
+                Gửi brief →
+              </button>
+            </div>
+          </form>
+        </section>
+      </div>
+      <div class="footer-note">
+        <span
+          >✳ Ý tưởng của bạn luôn là trung tâm. Gợi ý chỉ là điểm bắt đầu.</span
+        ><span id="save-note">Bản nháp được lưu khi bạn chọn Lưu.</span>
+      </div>
+    </main>
+  </body>
+</html>
